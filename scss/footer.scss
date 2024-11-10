@@ -1,0 +1,98 @@
+.carousel {
+    max-width: 90%; 
+    margin: 0 auto; 
+}
+
+.carousel img {
+    height: 50vh; 
+    object-fit:contain
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: black; /* Cambia el color de las flechas a negro */
+    background-size: 100%;   /* Asegura que el ícono ocupe todo el espacio */
+    border-radius: 50%;      /* Le da forma circular */
+}
+ footer {
+        padding: 40px;
+        background-color: $header-bg-color;
+        color: #ffffff;
+        text-align: center;
+        font-family: 'Playfair Display', serif; 
+    
+        p {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+        color: #eee;
+        }
+    
+        form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px; 
+        align-items: center;
+    
+        input, textarea, button {
+            width: 50%; 
+            max-width: 200%; 
+            padding: 15px; 
+            font-size: 1.1rem;
+            border-radius: 20px; 
+            border: 1px solid #ddd; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    
+        input, textarea {
+            background-color: #333;
+            color: #fff;
+    
+            &:focus {
+            outline: none;
+            border-color: $highlight-color;
+            box-shadow: 0 0 10px rgba(255, 99, 71, 0.4); 
+            }
+        }
+    
+        button {
+            background-color: $highlight-color;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 8px rgba(255, 99, 71, 0.3); 
+            &:hover {
+            transform: scale(1.05); 
+            box-shadow: 0 8px 15px rgba(255, 99, 71, 0.5); 
+            }
+        }
+        }
+    
+        .social-links {
+            margin-top: 30px;
+            font-size: 1.5rem;
+            color: #ddd;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        
+            a {
+                color: #ddd;
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                gap: 8px; // Espacio entre el ícono y el texto
+                transition: color 0.3s ease, transform 0.3s ease;
+        
+                i {
+                    font-size: 1.3rem; // Tamaño del ícono
+                }
+        
+                &:hover {
+                    color: #fff;
+                    transform: scale(1.1); // Agranda el enlace al hacer hover
+                }
+            }
+        }
+    }        
+    
