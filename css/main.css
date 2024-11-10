@@ -405,4 +405,137 @@ footer a:hover {
   color: white;
 }
 
-/*# sourceMappingURL=main.css.map */
+/* Responsive Styles */
+
+/* General adjustments for smaller screens */
+@media (max-width: 768px) {
+  body {
+    font-size: 0.9rem;
+    padding: 0 10px;
+  }
+  
+  header {
+    padding: 1rem 2rem;
+    flex-direction: column;
+    text-align: center;
+  }
+  header .phone-number {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .hero {
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+  }
+  .hero .hero-text {
+    width: 100%;
+    padding: 0;
+  }
+  .hero .hero-text h1 {
+    font-size: 2.5rem;
+  }
+  .hero .hero-text p {
+    font-size: 1.2rem;
+  }
+  .hero .hero-images {
+    width: 100%;
+    padding: 0;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  .hero .hero-image-primary {
+    width: 70%;
+    max-height: 40vh;
+  }
+  .hero .hero-image-secondary {
+    width: 50%;
+    left: 0;
+    top: 10%;
+  }
+
+  .about-split {
+    flex-direction: column;
+    margin: 20px 0;
+    box-shadow: none;
+    border-radius: 0;
+  }
+  .about-split .strategist, .about-split .creator {
+    padding: 40px 20px;
+    border-radius: 0;
+  }
+  .about-split .strategist h2, .about-split .creator h2 {
+    font-size: 2rem;
+  }
+
+  .skills {
+    padding: 20px;
+  }
+  .skills h2 {
+    font-size: 2rem;
+    padding-right: 0;
+  }
+  .skills .skills-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .skills .skills-content .skills-image img {
+    width: 20rem;
+  }
+
+  .my-story {
+    padding: 20px;
+  }
+  .my-story h2 {
+    font-size: 2rem;
+  }
+  .my-story .story-content p {
+    font-size: 1rem;
+  }
+  .my-story .story-content .story-image img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .portfolio {
+    padding: 20px;
+  }
+  .portfolio h2 {
+    font-size: 2.5rem;
+  }
+  .portfolio .portfolio-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+  }
+
+  footer {
+    padding: 15px;
+  }
+  footer form input, footer form textarea, footer form button {
+    width: 100%;
+    max-width: 100%;
+    font-size: 0.9rem;
+  }
+}
+
+/* Additional adjustments for extra small screens */
+@media (max-width: 480px) {
+  .hero .hero-text h1 {
+    font-size: 2rem;
+  }
+  .about-split .strategist h2, .about-split .creator h2 {
+    font-size: 1.8rem;
+  }
+  .skills h2 {
+    font-size: 1.8rem;
+  }
+  .portfolio h2 {
+    font-size: 2rem;
+  }
+  .footer form input, .footer form textarea, .footer form button {
+    font-size: 0.8rem;
+  }
+}
+
