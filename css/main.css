@@ -424,6 +424,7 @@ footer a:hover {
     margin-top: 0.5rem;
   }
 
+  /* Hero Section Adjustments */
   .hero {
     flex-direction: column;
     padding: 20px;
@@ -444,18 +445,22 @@ footer a:hover {
     padding: 0;
     margin-top: 20px;
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Ensure images stack on mobile */
+    align-items: center;
   }
   .hero .hero-image-primary {
-    width: 70%;
+    width: 80%;
     max-height: 40vh;
+    margin-bottom: 20px;
   }
   .hero .hero-image-secondary {
-    width: 50%;
+    width: 70%;
     left: 0;
-    top: 10%;
+    top: 0;
+    position: static;
   }
 
+  /* About Split Section Adjustments */
   .about-split {
     flex-direction: column;
     margin: 20px 0;
@@ -463,13 +468,14 @@ footer a:hover {
     border-radius: 0;
   }
   .about-split .strategist, .about-split .creator {
-    padding: 40px 20px;
+    padding: 20px;
     border-radius: 0;
   }
   .about-split .strategist h2, .about-split .creator h2 {
     font-size: 2rem;
   }
 
+  /* Skills Section Adjustments */
   .skills {
     padding: 20px;
   }
@@ -479,12 +485,13 @@ footer a:hover {
   }
   .skills .skills-content {
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
   }
   .skills .skills-content .skills-image img {
-    width: 20rem;
+    width: 80%;
   }
 
+  /* My Story Section Adjustments */
   .my-story {
     padding: 20px;
   }
@@ -499,6 +506,7 @@ footer a:hover {
     height: 150px;
   }
 
+  /* Portfolio Section Adjustments */
   .portfolio {
     padding: 20px;
   }
@@ -510,6 +518,7 @@ footer a:hover {
     gap: 15px;
   }
 
+  /* Footer Adjustments */
   footer {
     padding: 15px;
   }
@@ -534,8 +543,15 @@ footer a:hover {
   .portfolio h2 {
     font-size: 2rem;
   }
-  .footer form input, .footer form textarea, .footer form button {
+  footer form input, footer form textarea, footer form button {
     font-size: 0.8rem;
   }
 }
 
+/* Carousel adjustments */
+@media (max-width: 768px) {
+  .carousel-item img {
+    max-height: 250px;
+    object-fit: cover;
+  }
+}
