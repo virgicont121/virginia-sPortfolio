@@ -95,4 +95,122 @@
             }
         }
     }        
-    
+ /* Responsive Footer */
+footer {
+    padding: 2rem;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+
+    p {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        color: #eee;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+
+        input, textarea, button {
+            width: 90%; /* Ancho adaptable */
+            max-width: 400px;
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 15px;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        button {
+            background-color: #ff6347;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 8px rgba(255, 99, 71, 0.3);
+            &:hover {
+                transform: scale(1.05);
+                box-shadow: 0 8px 15px rgba(255, 99, 71, 0.5);
+            }
+        }
+    }
+
+    .social-links {
+        margin-top: 1rem;
+        font-size: 1.2rem;
+        color: #ddd;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+
+        a {
+            color: #ddd;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s ease, transform 0.3s ease;
+
+            i {
+                font-size: 1.3rem;
+            }
+
+            &:hover {
+                color: #fff;
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+/* Media Queries for smaller screens */
+@media (max-width: 768px) {
+    .btn-download {
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    footer {
+        padding: 1.5rem;
+
+        form {
+            input, textarea, button {
+                width: 100%; /* Mayor ancho en pantallas pequeñas */
+            }
+        }
+
+        .social-links {
+            font-size: 1rem; /* Ajuste del tamaño de las redes sociales */
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .btn-download {
+        padding: 0.8rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    footer {
+        padding: 1rem;
+
+        p {
+            font-size: 0.9rem;
+        }
+
+        form {
+            input, textarea, button {
+                font-size: 0.9rem; /* Ajuste en pantallas muy pequeñas */
+            }
+        }
+
+        .social-links {
+            font-size: 0.9rem;
+        }
+    }
+}   

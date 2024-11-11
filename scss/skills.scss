@@ -92,3 +92,73 @@
     }
   }
 }
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .skills-content {
+    flex-direction: column;
+    gap: 50px;
+
+    .skills-image img {
+      width: 25rem; // Reduce tamaño de imagen
+    }
+
+    .skill {
+      width: 100%;
+    }
+
+    .skill-bar {
+      &.web-design { height: calc(50rem * 0.6); }
+      &.seo { height: calc(55rem * 0.5); }
+      &.javascript { height: calc(55rem * 0.35); }
+      &.social-media { height: calc(55rem * 0.6); }
+      &.lead-generation { height: calc(55rem * 0.3); }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  h2 {
+    padding-right: 0;
+    font-size: 2rem;
+  }
+
+  .skills-content {
+    gap: 30px;
+    
+    .skills-image img {
+      width: 20rem;
+    }
+  }
+
+  .skill p {
+    font-size: 1.5rem;
+  }
+
+  .skill-bar::before {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .skills-content {
+    gap: 20px;
+
+    .skills-image img {
+      width: 15rem;
+    }
+
+    .skill p {
+      font-size: 1.2rem;
+    }
+
+    .skill-bar {
+      &::before {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}

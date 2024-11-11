@@ -22,6 +22,65 @@ header {
     text-align: right;
   }
 }
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 3rem 8rem;
+  height: 7rem;
+  width: 100%;
+
+  .logo {
+    img {
+      width: 5rem;
+      height: auto;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .phone-number {
+    font-size: 2rem;
+    color: #fff;
+    text-align: right;
+  }
+
+  /* Media Queries para Responsividad */
+  @media (max-width: 768px) {
+    padding: 2rem 4rem; /* Reduce el padding en pantallas medianas */
+    flex-direction: column;
+    height: auto;
+
+    .logo {
+      img {
+        width: 4rem; /* Ajusta el tamaño de la imagen del logo */
+      }
+    }
+
+    .phone-number {
+      font-size: 1.5rem;
+      margin-top: 0.5rem;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 1rem 2rem; /* Reduce el padding aún más para pantallas pequeñas */
+    
+    .logo {
+      img {
+        width: 3.5rem; /* Logo aún más pequeño en pantallas pequeñas */
+      }
+    }
+
+    .phone-number {
+      font-size: 1.2rem; /* Ajusta el tamaño del texto del número de teléfono */
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+  }
+}
 
 
 
