@@ -102,34 +102,19 @@ p {
   }
 }
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #333;
-  padding: 3rem 8rem;
+  background-color: rgba(51, 51, 51, 0.8);
+  padding: 2rem 8rem;
   height: 7rem;
-  width: 100%;
-}
-header .logo img {
-  width: 5rem;
-  height: auto;
-  margin: 0%;
-  padding: 0%;
-}
-header .phone-number {
-  font-size: 2rem;
-  color: #fff;
-  text-align: right;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #333;
-  padding: 3rem 8rem;
-  height: 7rem;
-  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+  /* Efecto cuando se hace scroll */
   /* Media Queries para Responsividad */
 }
 header .logo img {
@@ -143,14 +128,17 @@ header .phone-number {
   color: #fff;
   text-align: right;
 }
+header.scrolled {
+  background-color: rgba(51, 51, 51, 0.9);
+}
 @media (max-width: 768px) {
   header {
-    padding: 2rem 4rem; /* Reduce el padding en pantallas medianas */
+    padding: 2rem 4rem;
     flex-direction: column;
     height: auto;
   }
   header .logo img {
-    width: 4rem; /* Ajusta el tamaño de la imagen del logo */
+    width: 4rem;
   }
   header .phone-number {
     font-size: 1.5rem;
@@ -160,13 +148,13 @@ header .phone-number {
 }
 @media (max-width: 480px) {
   header {
-    padding: 1rem 2rem; /* Reduce el padding aún más para pantallas pequeñas */
+    padding: 1rem 2rem;
   }
   header .logo img {
-    width: 3.5rem; /* Logo aún más pequeño en pantallas pequeñas */
+    width: 3.5rem;
   }
   header .phone-number {
-    font-size: 1.2rem; /* Ajusta el tamaño del texto del número de teléfono */
+    font-size: 1.2rem;
     text-align: center;
     margin-top: 0.5rem;
   }
@@ -418,56 +406,6 @@ body {
     font-size: 1.2rem;
   }
 }
-@media (max-width: 768px) {
-  .about-split {
-    margin-top: 20px;
-  }
-  .about-split .strategist,
-  .about-split .creator {
-    padding: 40px;
-  }
-  .about-split .strategist h2,
-  .about-split .creator h2 {
-    font-size: 2rem;
-  }
-  .about-split .strategist ul li,
-  .about-split .creator ul li {
-    font-size: 1.1rem;
-  }
-  .pie-chart {
-    width: 300px;
-    height: 300px;
-  }
-  .pie-chart .label-strategist,
-  .pie-chart .label-creator {
-    font-size: 1rem;
-  }
-}
-@media (max-width: 480px) {
-  .about-split {
-    margin-top: 10px;
-  }
-  .about-split .strategist,
-  .about-split .creator {
-    padding: 30px;
-  }
-  .about-split .strategist h2,
-  .about-split .creator h2 {
-    font-size: 1.8rem;
-  }
-  .about-split .strategist ul li,
-  .about-split .creator ul li {
-    font-size: 1rem;
-  }
-  .pie-chart {
-    width: 250px;
-    height: 250px;
-  }
-  .pie-chart .label-strategist,
-  .pie-chart .label-creator {
-    font-size: 0.9rem;
-  }
-}
 .skills {
   margin: 60px 0;
   background-color: #f9f9f9;
@@ -650,6 +588,20 @@ body {
   height: 200px;
   object-fit: cover;
 }
+.my-story .carousel {
+  max-width: 90%;
+  margin: 0 auto;
+}
+.my-story .carousel img {
+  height: 50vh;
+  object-fit: contain;
+}
+.my-story .carousel-control-prev-icon,
+.my-story .carousel-control-next-icon {
+  background-color: black; /* Cambia el color de las flechas a negro */
+  background-size: 100%; /* Asegura que el ícono ocupe todo el espacio */
+  border-radius: 50%; /* Le da forma circular */
+}
 @media (max-width: 768px) {
   .my-story {
     padding: 30px 15px;
@@ -818,146 +770,69 @@ body {
     font-size: 1rem;
   }
 }
-.carousel {
-  max-width: 90%;
-  margin: 0 auto;
-}
-
-.carousel img {
-  height: 50vh;
-  object-fit: contain;
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-color: black; /* Cambia el color de las flechas a negro */
-  background-size: 100%; /* Asegura que el ícono ocupe todo el espacio */
-  border-radius: 50%; /* Le da forma circular */
-}
-
-footer {
-  padding: 40px;
+.custom-footer {
+  padding: 3rem 0;
+  margin: 0;
   background-color: #333;
-  color: #ffffff;
+  color: #fff;
   text-align: center;
   font-family: "Playfair Display", serif;
+  width: 100%;
+  box-sizing: border-box;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  margin-top: 2%;
 }
-footer p {
+.custom-footer p {
   font-size: 1.2rem;
-  margin-bottom: 20px;
+  margin: 0 0 1rem;
   color: #eee;
 }
-footer form {
+.custom-footer form {
   display: flex;
   flex-direction: column;
   gap: 15px;
   align-items: center;
+  width: 100%;
 }
-footer form input, footer form textarea, footer form button {
-  width: 50%;
-  max-width: 200%;
+.custom-footer form input, .custom-footer form textarea, .custom-footer form button {
+  width: 90%;
+  max-width: 600px;
   padding: 15px;
-  font-size: 1.1rem;
-  border-radius: 20px;
+  font-size: 1rem;
+  border-radius: 10px;
   border: 1px solid #ddd;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: #333;
+  background-color: #fff;
+  margin: 0;
+  box-sizing: border-box;
 }
-footer form input, footer form textarea {
-  background-color: #333;
-  color: #fff;
-}
-footer form input:focus, footer form textarea:focus {
-  outline: none;
-  border-color: #ff6347;
-  box-shadow: 0 0 10px rgba(255, 99, 71, 0.4);
-}
-footer form button {
+.custom-footer form button {
   background-color: #ff6347;
-  color: white;
+  color: #fff;
   font-weight: bold;
   border: none;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 8px rgba(255, 99, 71, 0.3);
 }
-footer form button:hover {
+.custom-footer form button:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 15px rgba(255, 99, 71, 0.5);
 }
-footer .social-links {
-  margin-top: 30px;
-  font-size: 1.5rem;
-  color: #ddd;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-footer .social-links a {
-  color: #ddd;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-footer .social-links a i {
-  font-size: 1.3rem;
-}
-footer .social-links a:hover {
-  color: #fff;
-  transform: scale(1.1);
-}
-
-/* Responsive Footer */
-footer {
-  padding: 2rem;
-  background-color: #333;
-  color: white;
-  text-align: center;
-  font-family: "Playfair Display", serif;
-}
-footer p {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  color: #eee;
-}
-footer form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: center;
-}
-footer form input, footer form textarea, footer form button {
-  width: 90%; /* Ancho adaptable */
-  max-width: 400px;
-  padding: 10px;
-  font-size: 1rem;
-  border-radius: 15px;
-  border: 1px solid #ddd;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-footer form button {
-  background-color: #ff6347;
-  color: white;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 8px rgba(255, 99, 71, 0.3);
-}
-footer form button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 15px rgba(255, 99, 71, 0.5);
-}
-footer .social-links {
-  margin-top: 1rem;
+.custom-footer .social-links {
+  margin-top: 2rem;
   font-size: 1.2rem;
-  color: #ddd;
   display: flex;
   justify-content: center;
   gap: 15px;
+  width: 100%;
+  padding: 0;
 }
-footer .social-links a {
+.custom-footer .social-links a {
   color: #ddd;
   text-decoration: none;
   display: flex;
@@ -965,45 +840,25 @@ footer .social-links a {
   gap: 5px;
   transition: color 0.3s ease, transform 0.3s ease;
 }
-footer .social-links a i {
+.custom-footer .social-links a i {
   font-size: 1.3rem;
 }
-footer .social-links a:hover {
+.custom-footer .social-links a:hover {
   color: #fff;
   transform: scale(1.1);
 }
 
-/* Media Queries for smaller screens */
+/* Media Queries */
 @media (max-width: 768px) {
-  .btn-download {
-    padding: 1rem 1.5rem;
-    font-size: 1rem;
-  }
-  footer {
-    padding: 1.5rem;
-  }
-  footer form input, footer form textarea, footer form button {
-    width: 100%; /* Mayor ancho en pantallas pequeñas */
-  }
-  footer .social-links {
-    font-size: 1rem; /* Ajuste del tamaño de las redes sociales */
+  .custom-footer {
+    padding: 2rem 0;
   }
 }
 @media (max-width: 480px) {
-  .btn-download {
-    padding: 0.8rem 1.2rem;
-    font-size: 0.9rem;
+  .custom-footer {
+    padding: 1.5rem 0;
   }
-  footer {
-    padding: 1rem;
-  }
-  footer p {
-    font-size: 0.9rem;
-  }
-  footer form input, footer form textarea, footer form button {
-    font-size: 0.9rem; /* Ajuste en pantallas muy pequeñas */
-  }
-  footer .social-links {
+  .custom-footer p {
     font-size: 0.9rem;
   }
 }

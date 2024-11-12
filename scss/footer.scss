@@ -1,133 +1,48 @@
-.carousel {
-    max-width: 90%; 
-    margin: 0 auto; 
-}
-
-.carousel img {
-    height: 50vh; 
-    object-fit:contain
-}
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    background-color: black; /* Cambia el color de las flechas a negro */
-    background-size: 100%;   /* Asegura que el ícono ocupe todo el espacio */
-    border-radius: 50%;      /* Le da forma circular */
-}
- footer {
-        padding: 40px;
-        background-color: $header-bg-color;
-        color: #ffffff;
-        text-align: center;
-        font-family: 'Playfair Display', serif; 
-    
-        p {
-        font-size: 1.2rem;
-        margin-bottom: 20px;
-        color: #eee;
-        }
-    
-        form {
-        display: flex;
-        flex-direction: column;
-        gap: 15px; 
-        align-items: center;
-    
-        input, textarea, button {
-            width: 50%; 
-            max-width: 200%; 
-            padding: 15px; 
-            font-size: 1.1rem;
-            border-radius: 20px; 
-            border: 1px solid #ddd; 
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-    
-        input, textarea {
-            background-color: #333;
-            color: #fff;
-    
-            &:focus {
-            outline: none;
-            border-color: $highlight-color;
-            box-shadow: 0 0 10px rgba(255, 99, 71, 0.4); 
-            }
-        }
-    
-        button {
-            background-color: $highlight-color;
-            color: white;
-            font-weight: bold;
-            border: none;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 8px rgba(255, 99, 71, 0.3); 
-            &:hover {
-            transform: scale(1.05); 
-            box-shadow: 0 8px 15px rgba(255, 99, 71, 0.5); 
-            }
-        }
-        }
-    
-        .social-links {
-            margin-top: 30px;
-            font-size: 1.5rem;
-            color: #ddd;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        
-            a {
-                color: #ddd;
-                text-decoration: none;
-                display: flex;
-                align-items: center;
-                gap: 8px; // Espacio entre el ícono y el texto
-                transition: color 0.3s ease, transform 0.3s ease;
-        
-                i {
-                    font-size: 1.3rem; // Tamaño del ícono
-                }
-        
-                &:hover {
-                    color: #fff;
-                    transform: scale(1.1); // Agranda el enlace al hacer hover
-                }
-            }
-        }
-    }        
- /* Responsive Footer */
-footer {
-    padding: 2rem;
+.custom-footer {
+    padding: 3rem 0;
+    margin: 0;
     background-color: #333;
-    color: white;
+    color: #fff;
     text-align: center;
     font-family: 'Playfair Display', serif;
+    width: 100%;
+    box-sizing: border-box;
+    border-top-left-radius: 20px; // Esquina superior izquierda redondeada
+    border-top-right-radius: 20px; // Esquina superior derecha redondeada
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2); // Sombra para dar profundidad
+    overflow: hidden; // Asegura que los elementos internos no sobresalgan de los bordes
+    margin-top: 2%;
 
     p {
-        font-size: 1rem;
-        margin-bottom: 1rem;
+        font-size: 1.2rem;
+        margin: 0 0 1rem;
         color: #eee;
     }
 
     form {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 15px;
         align-items: center;
+        width: 100%;
 
         input, textarea, button {
-            width: 90%; /* Ancho adaptable */
-            max-width: 400px;
-            padding: 10px;
+            width: 90%;
+            max-width: 600px;
+            padding: 15px;
             font-size: 1rem;
-            border-radius: 15px;
+            border-radius: 10px;
             border: 1px solid #ddd;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            color: #333;
+            background-color: #fff;
+            margin: 0;
+            box-sizing: border-box;
         }
 
         button {
             background-color: #ff6347;
-            color: white;
+            color: #fff;
             font-weight: bold;
             border: none;
             cursor: pointer;
@@ -141,12 +56,13 @@ footer {
     }
 
     .social-links {
-        margin-top: 1rem;
+        margin-top: 2rem;
         font-size: 1.2rem;
-        color: #ddd;
         display: flex;
         justify-content: center;
         gap: 15px;
+        width: 100%;
+        padding: 0;
 
         a {
             color: #ddd;
@@ -168,49 +84,18 @@ footer {
     }
 }
 
-/* Media Queries for smaller screens */
+/* Media Queries */
 @media (max-width: 768px) {
-    .btn-download {
-        padding: 1rem 1.5rem;
-        font-size: 1rem;
-    }
-
-    footer {
-        padding: 1.5rem;
-
-        form {
-            input, textarea, button {
-                width: 100%; /* Mayor ancho en pantallas pequeñas */
-            }
-        }
-
-        .social-links {
-            font-size: 1rem; /* Ajuste del tamaño de las redes sociales */
-        }
+    .custom-footer {
+        padding: 2rem 0;
     }
 }
 
 @media (max-width: 480px) {
-    .btn-download {
-        padding: 0.8rem 1.2rem;
-        font-size: 0.9rem;
-    }
-
-    footer {
-        padding: 1rem;
-
+    .custom-footer {
+        padding: 1.5rem 0;
         p {
             font-size: 0.9rem;
         }
-
-        form {
-            input, textarea, button {
-                font-size: 0.9rem; /* Ajuste en pantallas muy pequeñas */
-            }
-        }
-
-        .social-links {
-            font-size: 0.9rem;
-        }
     }
-}   
+}

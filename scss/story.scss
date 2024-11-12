@@ -41,7 +41,22 @@
           }
       }
   }
+  .carousel {
+    max-width: 90%; 
+    margin: 0 auto; 
+}
 
+.carousel img {
+    height: 50vh; 
+    object-fit:contain
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: black; /* Cambia el color de las flechas a negro */
+    background-size: 100%;   /* Asegura que el ícono ocupe todo el espacio */
+    border-radius: 50%;      /* Le da forma circular */
+}
+ 
   /* Responsive adjustments */
   @media (max-width: 768px) {
       padding: 30px 15px;
