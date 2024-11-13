@@ -1,56 +1,55 @@
-
 .portfolio {
   padding: 6rem 4rem;
   text-align: center;
   font-family: 'Playfair Display', serif;
 
   h2 {
-    font-size: 5rem; // Tamaño más grande para el título principal
+    font-size: 5rem;
     color: #333;
     margin-bottom: 4rem;
   }
 
   p {
-    font-size: 3rem; // Tamaño más grande para subtítulos
+    font-size: 3rem;
     color: #555;
     margin-bottom: 4rem;
   }
 
   .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); // Columnas adaptativas con mayor ancho mínimo
-    gap: 2rem; // Espacio mayor entre columnas
+    grid-template-columns: repeat(4, 1fr); // Exactamente 4 columnas
+    gap: 2rem;
     justify-items: center;
 
     .portfolio-item {
       width: 100%;
-      max-width: 35rem; // Ancho máximo ampliado
+      max-width: 35rem;
       background-color: #f9f9f9;
-      padding: 3rem; // Mayor padding para el contenido
+      padding: 3rem;
       border-radius: 1.5rem;
-      box-shadow: 0px 0.75rem 1.5rem rgba(0, 0, 0, 0.2); // Sombra más pronunciada
+      box-shadow: 0px 0.75rem 1.5rem rgba(0, 0, 0, 0.2);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
 
       &:hover {
-        transform: scale(1.1); // Escala de hover más grande
-        box-shadow: 0px 1rem 2rem rgba(0, 0, 0, 0.25); // Sombra de hover más intensa
+        transform: scale(1.1);
+        box-shadow: 0px 1rem 2rem rgba(0, 0, 0, 0.25);
       }
 
       img {
         width: 100%;
-        height: 25rem; // Mayor altura para las imágenes
+        height: 25rem;
         object-fit: cover;
         border-radius: 1.5rem;
       }
 
       h3 {
-        font-size: 2.5rem; // Tamaño mayor para el título del ítem
+        font-size: 2.5rem;
         color: #333;
         margin-top: 2rem;
       }
 
       p {
-        font-size: 1.8rem; // Descripción de mayor tamaño
+        font-size: 1.8rem;
         color: #555;
         margin-top: 1rem;
       }
@@ -62,9 +61,10 @@
     }
   }
 }
+
 // Media queries for responsiveness
 
-// Tablets and small desktops
+// Tablets and small desktops (2 columns)
 @media (max-width: 992px) {
   .portfolio {
     padding: 4rem 2rem;
@@ -78,6 +78,7 @@
     }
 
     .portfolio-grid {
+      grid-template-columns: repeat(2, 1fr); // Cambia a 2 columnas en pantallas medianas
       gap: 2rem;
 
       .portfolio-item {
@@ -100,7 +101,7 @@
   }
 }
 
-// Mobile devices
+// Mobile devices (1 column)
 @media (max-width: 768px) {
   .portfolio {
     padding: 3rem 1.5rem;
@@ -114,7 +115,7 @@
     }
 
     .portfolio-grid {
-      grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+      grid-template-columns: 1fr; // Una sola columna en dispositivos móviles
       gap: 1.5rem;
 
       .portfolio-item {
@@ -137,7 +138,7 @@
   }
 }
 
-// Extra small mobile devices
+// Extra small mobile devices (1 column, smaller spacing)
 @media (max-width: 480px) {
   .portfolio {
     padding: 2rem 1rem;
@@ -172,3 +173,4 @@
     }
   }
 }
+
